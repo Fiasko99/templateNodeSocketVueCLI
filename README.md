@@ -1,4 +1,4 @@
-# Template NodeJS + Socket.IO + Sequelize
+# Template NodeJS + Socket.IO + Sequelize(mysql2)
 
 ## Project setup
 ```
