@@ -1,25 +1,27 @@
 const app = require('express')()
 const server = require('http').createServer(app)
 const io = require('socket.io')(server)
+const test = require('./sockets/testapi.js')
+const conSeq = require("./conSeq.js")
 
-app.use((req, res, next) => {
-  res.set("Access-Control-Allow-Origin", 'http://localhost:8080')
-  res.set("Access-Control-Allow-Headers", 'Content-type')
-  res.set("Access-Control-Allow-Methods", 'GET, POST')
-  res.set("Access-Control-Allow-Credentials", true)
-  res.removeHeader('X-Powered-By')
-  next()
-})
+const sequelize = conSeq()
+const users = require('./models/users.js')
 
+const User = sequelize.define('users', users)
 
+const db = {
+  User
+}
 
 io.on('connection', socket => {
-
+  test()
   console.log('SocketIO')
 
 })
 
 module.exports = {
+  db,
+  sequelize,
   app,
   server
 }
