@@ -1,4 +1,4 @@
-# chatnode
+# Template NodeJS + Socket.IO + Sequelize
 
 ## Project setup
 ```
