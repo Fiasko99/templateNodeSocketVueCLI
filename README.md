@@ -1,4 +1,4 @@
-# chatnode
+# template NodeJS + Socket.IO
 
 ## Project setup
 ```
