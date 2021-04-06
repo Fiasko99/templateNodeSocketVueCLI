@@ -1,8 +1,8 @@
 module.exports = {
-  HOST: "std-mysql",
-  USER: "std_915_nodejschat",
-  PASSWORD: "rasulov01",
-  DB: "std_915_nodejschat",
+  HOST: "localhost",
+  USER: "root",
+  PASSWORD: "",
+  DB: "customdb",
   dialect: "mysql"
 };
 
