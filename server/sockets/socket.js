@@ -5,7 +5,7 @@ const test = require('./sockets/testapi.js')
 const conSeq = require("./conSeq.js")
 
 const sequelize = conSeq()
-const users = require('./models/users.js')
+const users = require('./models/user.js')
 
 const User = sequelize.define('users', users)
 
