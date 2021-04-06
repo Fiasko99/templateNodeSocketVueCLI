@@ -1,17 +1,23 @@
-const { app, server } = require('./socket')
-
-
+const { db, sequelize, express, app, server, host } = require('./socket')
 
 app.get('/', (req, res) => {
-  res.end('It works')
+  res.send('It work')
+  res.sendFile(
+    path.join(__dirname, '../dist', 'index.html')
+  )
 })
 
-async function start() {
-  const host = 'localhost'
-  const port = 3000
+app.get('/users', (req, res) => {
+  res.send('users')
+})
 
-  server.listen(port, () => {
-    console.log(`Server listening on http://${host}:${port}`,)
+const start = async function() {
+  const port = 3000
+  server.listen(port, async () => {
+    await sequelize.sync({ alter: true })
+    console.info(`[server] connection DB `);
+    console.info(`Server listening on http://${host}:${port}`,)
+    console.log(`_`.repeat(48))
   })
 }
-start()
+start() 
