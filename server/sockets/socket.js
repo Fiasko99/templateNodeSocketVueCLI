@@ -2,12 +2,12 @@ const express = require('express')
 const app = express()
 const server = require('http').createServer(app)
 const io = require('socket.io')(server)
-const JWTCONFIG = require("./configs/jwt.config");
+const JWTCONFIG = require("../configs/jwt.config");
 const cors = require('cors')
 const path = require('path')
 const history = require("connect-history-api-fallback")
-const authrouter = require('./router')
-const {db, sequelize, jwt} = require('./initRequire')
+const authrouter = require('../router')
+const {db, sequelize, jwt} = require('../initRequire')
 
 const host = 'localhost'
 

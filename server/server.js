@@ -1,4 +1,4 @@
-const { db, sequelize, express, app, server, host } = require('./socket')
+const { db, sequelize, express, app, server, host } = require('./sockets/socket')
 
 app.get('/', (req, res) => {
   res.send('It work')
